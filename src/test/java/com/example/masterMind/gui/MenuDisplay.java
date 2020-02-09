@@ -38,7 +38,7 @@ public class MenuDisplay {
     public void test_showWelcomePrintsText() {
         menu.showWelcome();
 
-        assertNotEquals(0, outContent.size());
+        assertNotEquals("\r\n", outContent.toString());
     }
 
     @Test
@@ -60,8 +60,13 @@ public class MenuDisplay {
         assertEquals(TEST_STRING, line);
     }
 
-    private void mockStdIn(String TEST_STRING) {
-        ByteArrayInputStream aaaa = new ByteArrayInputStream(TEST_STRING.getBytes());
-        System.setIn(aaaa);
+    @Test
+    public void test_congratulationsPrintsText() {
+        menu.showCongratulations();
+        assertNotEquals("\r\n", outContent.toString());
+    }
+
+    private void mockStdIn(String mockInput) {
+        System.setIn(new ByteArrayInputStream(mockInput.getBytes()));
     }
 }
