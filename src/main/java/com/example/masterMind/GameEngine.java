@@ -1,5 +1,8 @@
 package com.example.masterMind;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameEngine {
 
     public void setSecret(String secret) {

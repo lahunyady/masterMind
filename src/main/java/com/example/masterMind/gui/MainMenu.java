@@ -28,6 +28,6 @@ public class MainMenu {
     }
 
     public void showCongratulations() {
-        System.out.println();
+        System.out.println(CONGRATULATIONS);
     }
 }
