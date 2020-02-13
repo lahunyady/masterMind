@@ -22,24 +22,12 @@ public class MasterMindApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		menu.showWelcome();
-		engine.setSecret(readInput());
+		menu.showGuess(engine.guess());
 
-		while (!isSecretGuessed()) {
-			displayNextGuess();
+		while (!engine.isWin(menu.readLine())) {
+			menu.showGuess(engine.guess());
 		}
 
 		menu.showCongratulations();
-	}
-
-	private boolean isSecretGuessed() {
-		return engine.isGuessed(readInput());
-	}
-
-	private void displayNextGuess() {
-		menu.showGuess(engine.nextGuess());
-	}
-
-	private String readInput() {
-		return menu.readLine();
 	}
 }

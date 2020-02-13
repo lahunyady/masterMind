@@ -11,11 +11,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MenuDisplay {
+public class MainMenuTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
     private final InputStream backup = System.in;
@@ -37,6 +37,13 @@ public class MenuDisplay {
     @Test
     public void test_showWelcomePrintsText() {
         menu.showWelcome();
+
+        assertNotEquals("\r\n", outContent.toString());
+    }
+
+    @Test
+    public void test_showGuess() {
+        menu.showGuess("example");
 
         assertNotEquals("\r\n", outContent.toString());
     }

@@ -1,2 +1,2 @@
-welcome_message: "Hello! Please choose 4 characters!"
+welcome_message: "\r\nWelcome to the guessing game! \r\nThink of 4 characters from ABCDEF, and write + for each matching character on the same spot, and write - for each matching character on different spot.\r\nIs it:"
 congratulations_message: "Congratulations you won! Thanks for playing!"
